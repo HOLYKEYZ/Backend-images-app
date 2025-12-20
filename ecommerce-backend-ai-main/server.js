@@ -30,6 +30,10 @@ const __dirname = path.dirname(__filename);
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Serve images from the images folder
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
